@@ -1,0 +1,2019 @@
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const DetailedPitchDeck = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    // Slide 1: Title
+    {
+      title: "SILK EMPIRE KENYA",
+      subtitle: "Building Kenya's First Commercial-Scale Silk Industry",
+      content: (
+        <div className="flex flex-col items-center justify-center h-full text-center">
+          <h1 className="text-6xl font-bold mb-6">SILK EMPIRE KENYA</h1>
+          <p className="text-3xl mb-8 opacity-90">Building Kenya's First Commercial-Scale Silk Industry</p>
+          <p className="text-2xl mb-12 max-w-3xl">
+            From 2 Tonnes to 10,000+ Tonnes<br/>
+            Transforming Agriculture. Empowering Communities. Capturing Global Markets.
+          </p>
+          <div className="bg-white/10 backdrop-blur rounded-xl p-8 max-w-2xl">
+            <p className="text-xl mb-4"><strong>Confidential Investment Memorandum</strong></p>
+            <p className="text-lg opacity-80">Detailed Business Plan & Financial Projections</p>
+          </div>
+          <p className="text-xl opacity-70 mt-12">
+            📍 Nairobi, Kenya | 🌍 Targeting $26B Global Market
+          </p>
+        </div>
+      )
+    },
+    
+    // Slide 2: Executive Summary
+    {
+      title: "Executive Summary",
+      subtitle: "Investment opportunity at a glance",
+      content: (
+        <div>
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">The Opportunity</h3>
+              <ul className="space-y-2 text-lg">
+                <li>• Kenya produces &lt;2 tonnes silk annually</li>
+                <li>• Proven capacity: 10,000+ tonnes (KALRO study)</li>
+                <li>• Global market: $26B growing at 9.25% CAGR</li>
+                <li>• Kenya's current share: ~0%</li>
+                <li>• Farmer ROI: KES 1.8M per acre annually</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Our Solution</h3>
+              <ul className="space-y-2 text-lg">
+                <li>• Vertically integrated silk production</li>
+                <li>• 5-year plan: 2 → 1,000+ tonnes</li>
+                <li>• Train 5,000+ farmers across ideal counties</li>
+                <li>• Export to EU, US premium markets</li>
+                <li>• Partnership with KALRO & UoN</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-6 mb-6">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-3">Investment Highlights</h3>
+            <div className="grid grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-3xl font-bold mb-2">KES 3B</div>
+                <div className="text-sm">Year 5 Revenue Target</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">40%</div>
+                <div className="text-sm">Gross Margin (Year 5)</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">Year 3</div>
+                <div className="text-sm">Break-Even Point</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">5,000+</div>
+                <div className="text-sm">Jobs Created</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <h3 className="text-xl font-bold text-yellow-400 mb-3">Key Risk Mitigations</h3>
+            <div className="grid grid-cols-3 gap-4 text-sm">
+              <div>✓ Government partnership (KALRO)</div>
+              <div>✓ Proven climate suitability</div>
+              <div>✓ Export market pre-agreements</div>
+              <div>✓ Phased capital deployment</div>
+              <div>✓ Multiple revenue streams</div>
+              <div>✓ Experienced advisory board</div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    
+    // Slide 3: The Problem - Detailed
+    {
+      title: "The Problem: Untapped Potential",
+      subtitle: "Kenya's silk industry is virtually non-existent despite ideal conditions",
+      content: (
+        <div>
+          <div className="grid grid-cols-4 gap-4 mb-8">
+            {[
+              { number: "<2", label: "Tonnes Annual\nProduction", subtext: "vs. 10,000+ capacity" },
+              { number: "600", label: "Total Farmers\nNationwide", subtext: "Only 50 active rearers" },
+              { number: "250", label: "Acres Under\nCultivation", subtext: "Needs 10,000+ acres" },
+              { number: "$10K", label: "Annual Market\nValue", subtext: "vs. $26B global market" }
+            ].map((stat, i) => (
+              <div key={i} className="bg-white/10 backdrop-blur p-6 rounded-xl text-center border-2 border-white/20">
+                <div className="text-4xl font-bold text-yellow-400 mb-2">{stat.number}</div>
+                <div className="text-base font-semibold whitespace-pre-line mb-2">{stat.label}</div>
+                <div className="text-xs opacity-70">{stat.subtext}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="bg-red-400/20 border-2 border-red-400 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-red-400 mb-4">Current Challenges</h3>
+              <ul className="space-y-3 text-base">
+                <li>→ <strong>No commercial infrastructure:</strong> All production is cottage-scale</li>
+                <li>→ <strong>Limited knowledge:</strong> Only 50 farmers actively rear silkworms</li>
+                <li>→ <strong>Poor quality control:</strong> No grading or processing standards</li>
+                <li>→ <strong>Broken supply chain:</strong> Farmers can't access markets</li>
+                <li>→ <strong>Import dependency:</strong> Kenya imports silk worth ~$10K/year</li>
+                <li>→ <strong>Zero export presence:</strong> No participation in global market</li>
+              </ul>
+            </div>
+
+            <div className="bg-green-400/20 border-2 border-green-400 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-green-400 mb-4">Why Now?</h3>
+              <ul className="space-y-3 text-base">
+                <li>✓ <strong>Government commitment:</strong> KES 700M pledged to KALRO center</li>
+                <li>✓ <strong>Climate suitability proven:</strong> 45+ years of research confirms viability</li>
+                <li>✓ <strong>Global demand surge:</strong> 9.25% CAGR through 2031</li>
+                <li>✓ <strong>Trade access:</strong> EPA with EU, AGOA with US</li>
+                <li>✓ <strong>Successful pilot farms:</strong> Makueni farmers earning KES 1.8M/acre</li>
+                <li>✓ <strong>First-mover advantage:</strong> No commercial competitors</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-6">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-3">The Core Insight</h3>
+            <p className="text-xl leading-relaxed">
+              Kenya has everything needed for a thriving silk industry—ideal climate (23-28°C), proven mulberry cultivation, 
+              government research support, and trade agreements—yet produces 5,000x below capacity. This gap represents 
+              a <strong>massive, time-limited opportunity</strong> to build an industry from scratch before competition enters.
+            </p>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 4: Market Analysis - Global
+    {
+      title: "Global Market Analysis",
+      subtitle: "Explosive growth in premium silk textiles",
+      content: (
+        <div>
+          <div className="grid grid-cols-3 gap-6 mb-8">
+            {[
+              { label: "2025 Market Size", value: "$26.28B", change: "↑ 9.25% from 2024" },
+              { label: "2031 Projection", value: "$34.1B", change: "8.2% CAGR (2022-2031)" },
+              { label: "Annual Growth", value: "9.25%", change: "Double-digit sustained" }
+            ].map((stat, i) => (
+              <div key={i} className="bg-white/10 backdrop-blur p-6 rounded-xl text-center border-2 border-white/20">
+                <div className="text-sm opacity-70 mb-2">{stat.label}</div>
+                <div className="text-4xl font-bold text-yellow-400 mb-2">{stat.value}</div>
+                <div className="text-sm opacity-80">{stat.change}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Market Segmentation</h3>
+              <div className="space-y-3 text-base">
+                <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                  <span><strong>Mulberry Silk</strong> (Premium)</span>
+                  <span className="text-yellow-400">80% of market</span>
+                </div>
+                <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                  <span><strong>Eri Silk</strong> (Sustainable)</span>
+                  <span className="text-yellow-400">Fastest growing</span>
+                </div>
+                <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                  <span><strong>Tussar & Muga</strong></span>
+                  <span className="text-yellow-400">Niche luxury</span>
+                </div>
+              </div>
+              <p className="mt-4 text-sm opacity-80"><em>Source: Market Data Forecast 2025, Allied Market Research</em></p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">End-Use Applications</h3>
+              <div className="space-y-3 text-base">
+                <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                  <span>Fashion & Apparel</span>
+                  <span className="text-yellow-400">60%</span>
+                </div>
+                <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                  <span>Home Furnishings</span>
+                  <span className="text-yellow-400">25%</span>
+                </div>
+                <div className="flex justify-between items-center pb-2 border-b border-white/20">
+                  <span>Medical Textiles</span>
+                  <span className="text-yellow-400">10%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Industrial (Bio-tech)</span>
+                  <span className="text-yellow-400">5%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <h3 className="text-xl font-bold text-yellow-400 mb-4">Regional Production Dominance</h3>
+            <div className="grid grid-cols-4 gap-4 text-center text-base">
+              <div>
+                <div className="text-3xl font-bold mb-2">🇨🇳</div>
+                <div className="font-bold">China</div>
+                <div className="text-sm opacity-80">~70% production</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">🇮🇳</div>
+                <div className="font-bold">India</div>
+                <div className="text-sm opacity-80">~20% production</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">🌏</div>
+                <div className="font-bold">Other Asia</div>
+                <div className="text-sm opacity-80">~8% production</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">🌍</div>
+                <div className="font-bold">Africa</div>
+                <div className="text-sm opacity-80">&lt;2% production</div>
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-center opacity-80"><em>Source: FAO, International Sericultural Commission</em></p>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 5: Target Markets & Pricing
+    {
+      title: "Target Markets & Pricing Strategy",
+      subtitle: "Premium positioning for maximum margins",
+      content: (
+        <div>
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-6 mb-6">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-3">Our Market Position</h3>
+            <p className="text-lg">
+              <strong>"Premium African Silk"</strong> - Positioning as high-quality, sustainably-produced alternative 
+              to Asian silk with compelling origin story and ethical production credentials.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-6 mb-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">European Union</h3>
+              <div className="space-y-3 text-base">
+                <div><strong>Market Size:</strong> €3.2B annually</div>
+                <div><strong>Growth:</strong> 6.8% CAGR</div>
+                <div><strong>Access:</strong> Duty-free via EPA agreement</div>
+                <div><strong>Demand Drivers:</strong></div>
+                <ul className="text-sm space-y-1 ml-4">
+                  <li>• Sustainable fashion movement</li>
+                  <li>• Italian luxury houses (Versace, Armani)</li>
+                  <li>• French haute couture</li>
+                  <li>• UK premium textile buyers</li>
+                </ul>
+                <div className="mt-3 pt-3 border-t border-white/20">
+                  <strong>Target Price:</strong> €35-45/kg raw silk
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">United States</h3>
+              <div className="space-y-3 text-base">
+                <div><strong>Market Size:</strong> $1.8B annually</div>
+                <div><strong>Growth:</strong> 6.5% CAGR</div>
+                <div><strong>Access:</strong> Currently 10% tariff (negotiating)</div>
+                <div><strong>Demand Drivers:</strong></div>
+                <ul className="text-sm space-y-1 ml-4">
+                  <li>• Eco-conscious consumers</li>
+                  <li>• Premium bedding market</li>
+                  <li>• Luxury fashion brands</li>
+                  <li>• Medical textiles (biotech)</li>
+                </ul>
+                <div className="mt-3 pt-3 border-t border-white/20">
+                  <strong>Target Price:</strong> $40-50/kg raw silk
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">East African Community</h3>
+              <div className="space-y-3 text-base">
+                <div><strong>Market Size:</strong> $450M annually</div>
+                <div><strong>Growth:</strong> 12% CAGR</div>
+                <div><strong>Access:</strong> Duty-free (EAC member)</div>
+                <div><strong>Demand Drivers:</strong></div>
+                <ul className="text-sm space-y-1 ml-4">
+                  <li>• Growing middle class</li>
+                  <li>• Tourism/hospitality sector</li>
+                  <li>• Local fashion designers</li>
+                  <li>• Government procurement</li>
+                </ul>
+                <div className="mt-3 pt-3 border-t border-white/20">
+                  <strong>Target Price:</strong> KES 3,000-3,500/kg
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Competitive Pricing Analysis</h3>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-white/30">
+                    <th className="text-left py-2">Origin</th>
+                    <th className="text-right py-2">Price/kg</th>
+                    <th className="text-right py-2">Quality</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Chinese (Bulk)</td>
+                    <td className="text-right">$25-30</td>
+                    <td className="text-right">Standard</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Indian (Premium)</td>
+                    <td className="text-right">$35-42</td>
+                    <td className="text-right">High</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Thai (Organic)</td>
+                    <td className="text-right">$45-55</td>
+                    <td className="text-right">Premium</td>
+                  </tr>
+                  <tr className="font-bold text-yellow-400">
+                    <td className="py-2">Kenyan (Target)</td>
+                    <td className="text-right">$38-48</td>
+                    <td className="text-right">Premium</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-green-400/20 border-2 border-green-400 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-green-400 mb-4">Margin Structure (Year 5)</h3>
+              <div className="space-y-3 text-base">
+                <div className="flex justify-between pb-2 border-b border-green-400/30">
+                  <span>Average Selling Price</span>
+                  <span className="font-bold">KES 3,000/kg</span>
+                </div>
+                <div className="flex justify-between pb-2 border-b border-green-400/30">
+                  <span>Farmer Payment</span>
+                  <span>KES 1,200/kg</span>
+                </div>
+                <div className="flex justify-between pb-2 border-b border-green-400/30">
+                  <span>Processing Costs</span>
+                  <span>KES 600/kg</span>
+                </div>
+                <div className="flex justify-between pb-2 border-b border-green-400/30 font-bold text-green-400">
+                  <span>Gross Margin</span>
+                  <span>KES 1,200/kg (40%)</span>
+                </div>
+                <p className="text-sm opacity-80 mt-3">Premium export pricing can push margins to 50%+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 6: Farmer Economics - Detailed
+    {
+      title: "Farmer Economics: Detailed Analysis",
+      subtitle: "KES 1.8M per acre annually - transformative income for rural families",
+      content: (
+        <div>
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-6 mb-6">
+            <h3 className="text-3xl font-bold text-yellow-400 mb-3">KES 1,800,000 Per Acre Annually</h3>
+            <p className="text-lg">Based on established farmer data from Makueni County (Tosheka Textiles case study) and KALRO research</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Per-Cycle Economics (21 days)</h3>
+              <table className="w-full text-base">
+                <tbody>
+                  <tr className="border-b border-white/20">
+                    <td className="py-3">Silkworms (4m² space)</td>
+                    <td className="text-right font-bold">40,000 worms</td>
+                  </tr>
+                  <tr className="border-b border-white/20">
+                    <td className="py-3">Mulberry leaves required</td>
+                    <td className="text-right">1 tonne</td>
+                  </tr>
+                  <tr className="border-b border-white/20">
+                    <td className="py-3">Silk cocoons produced</td>
+                    <td className="text-right">30-40 kg</td>
+                  </tr>
+                  <tr className="border-b border-white/20">
+                    <td className="py-3">Grade A price (KES/kg)</td>
+                    <td className="text-right">KES 1,207</td>
+                  </tr>
+                  <tr className="border-b border-white/20">
+                    <td className="py-3">Grade B price (KES/kg)</td>
+                    <td className="text-right">KES 966</td>
+                  </tr>
+                  <tr className="border-b border-white/20">
+                    <td className="py-3">Grade C price (KES/kg)</td>
+                    <td className="text-right">KES 604</td>
+                  </tr>
+                  <tr className="font-bold text-yellow-400">
+                    <td className="py-3">Revenue per cycle</td>
+                    <td className="text-right">KES 45K-100K</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="text-sm mt-3 opacity-80"><em>Source: KALRO, Farm Africa data 2024</em></p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Annual Projections</h3>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm">Cycles per year</span>
+                    <span className="font-bold">4-5 cycles</span>
+                  </div>
+                  <div className="text-xs opacity-70">With experience and proper training (KALRO avg: 4.5 cycles)</div>
+                </div>
+                
+                <div className="pt-3 border-t border-white/20">
+                  <div className="text-sm mb-2">Conservative Scenario (4 cycles, mixed grades):</div>
+                  <div className="text-2xl font-bold text-yellow-400">KES 300,000 - 360,000</div>
+                </div>
+
+                <div className="pt-3 border-t border-white/20">
+                  <div className="text-sm mb-2">Average Scenario (4.5 cycles, mostly A/B grade):</div>
+                  <div className="text-2xl font-bold text-yellow-400">KES 450,000 - 540,000</div>
+                </div>
+
+                <div className="pt-3 border-t border-white/20">
+                  <div className="text-sm mb-2">Optimal Scenario (5 cycles, premium quality):</div>
+                  <div className="text-3xl font-bold text-yellow-400">KES 1,800,000</div>
+                  <div className="text-xs opacity-70 mt-1">Achieved by top 20% of Makueni farmers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Cost Structure (Per Cycle)</h3>
+              <table className="w-full text-sm">
+                <tbody>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Silkworm eggs (1 case)</td>
+                    <td className="text-right">KES 1,500</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Mulberry cultivation (own leaves)</td>
+                    <td className="text-right">KES 2,000</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Rearing supplies</td>
+                    <td className="text-right">KES 1,500</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Labor (family/hired)</td>
+                    <td className="text-right">KES 5,000</td>
+                  </tr>
+                  <tr className="font-bold text-yellow-400">
+                    <td className="py-2">Total Cost</td>
+                    <td className="text-right">KES 10,000</td>
+                  </tr>
+                  <tr className="font-bold text-green-400 text-base">
+                    <td className="py-2">Net Profit (avg cycle)</td>
+                    <td className="text-right">KES 50K-90K</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-green-400/20 border-2 border-green-400 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-green-400 mb-4">Comparison: Traditional Crops</h3>
+              <table className="w-full text-base">
+                <thead>
+                  <tr className="border-b border-green-400/30">
+                    <th className="text-left py-2">Crop</th>
+                    <th className="text-right py-2">Income/Acre/Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-green-400/20">
+                    <td className="py-2">Maize</td>
+                    <td className="text-right">KES 80,000-150,000</td>
+                  </tr>
+                  <tr className="border-b border-green-400/20">
+                    <td className="py-2">Coffee</td>
+                    <td className="text-right">KES 150,000-300,000</td>
+                  </tr>
+                  <tr className="border-b border-green-400/20">
+                    <td className="py-2">Tea</td>
+                    <td className="text-right">KES 200,000-400,000</td>
+                  </tr>
+                  <tr className="font-bold text-green-400">
+                    <td className="py-2">Silk (Target)</td>
+                    <td className="text-right">KES 1,800,000</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="mt-4 p-3 bg-green-400/20 rounded text-center">
+                <div className="text-3xl font-bold">5-10x</div>
+                <div className="text-sm">Higher than traditional crops</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-white/10 backdrop-blur p-4 rounded-xl">
+            <h3 className="text-lg font-bold text-yellow-400 mb-2">Additional Income: By-Products</h3>
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <strong>Silk Pupae (High-Protein):</strong> Sold as animal feed at KES 50/kg. 
+                Average 10kg per cycle = KES 500 additional income
+              </div>
+              <div>
+                <strong>Silkworm Waste (Fertilizer):</strong> Organic fertilizer sold at KES 20/kg. 
+                Average 20kg per cycle = KES 400 additional income
+              </div>
+            </div>
+            <div className="text-center mt-3 font-bold text-yellow-400">Total by-product income: 10-15% boost to revenues</div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 7: Our Solution - Full Value Chain
+    {
+      title: "Our Solution: Vertically Integrated Model",
+      subtitle: "Complete control from farm to finished product",
+      content: (
+        <div>
+          <div className="bg-gradient-to-r from-yellow-400/20 to-yellow-400/10 border-l-4 border-yellow-400 p-6 rounded-lg mb-6">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-3">Four-Stage Value Chain</h3>
+            <p className="text-lg">Building infrastructure and capabilities across the entire silk production ecosystem to maximize quality, efficiency, and value capture</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">🌱 Stage 1: Cultivation</h3>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Mulberry Plantations</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Establish 10,000+ acres across ideal counties</li>
+                    <li>• Plant disease-resistant Kanva-2 variety (KALRO)</li>
+                    <li>• Achieve 640kg cocoons/acre/year yield</li>
+                    <li>• Setup demonstration farms in 3 regions</li>
+                  </ul>
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Farmer Training</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Recruit 5,000+ farmers over 5 years</li>
+                    <li>• 3-month comprehensive training program</li>
+                    <li>• Ongoing technical support via extension officers</li>
+                    <li>• Quality incentives (premium for Grade A)</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Silkworm Supply</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Partnership with KALRO for disease-free eggs</li>
+                    <li>• Establish egg production facility (Year 3)</li>
+                    <li>• Quality control and hybrid development</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">🐛 Stage 2: Rearing</h3>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Modern Rearing Facilities</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Climate-controlled rearing houses (23-28°C)</li>
+                    <li>• Proper ventilation and humidity control</li>
+                    <li>• Biosecurity protocols to prevent disease</li>
+                    <li>• Capacity for 500M worms annually (Year 5)</li>
+                  </ul>
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Disease Management</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Regular health monitoring systems</li>
+                    <li>• Quarantine protocols for infected batches</li>
+                    <li>• Partnership with UoN for research</li>
+                    <li>• Target: &lt;5% mortality rate</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Quality Assurance</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Regular inspection by extension officers</li>
+                    <li>• Best practices training and manuals</li>
+                    <li>• Farmer peer support groups</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">🏭 Stage 3: Processing</h3>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Collection Centers</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• 15 county-level collection points</li>
+                    <li>• On-site quality grading (A, B, C)</li>
+                    <li>• Immediate payment to farmers</li>
+                    <li>• Cold storage for cocoon preservation</li>
+                  </ul>
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Central Processing Plant</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Located in Thika (near KALRO center)</li>
+                    <li>• Automated reeling machines (50kg/day capacity)</li>
+                    <li>• Spinning and twisting equipment</li>
+                    <li>• Quality testing laboratory</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Raw Silk Production</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Target yield: 15-18% silk from cocoons</li>
+                    <li>• Multiple thread counts for different uses</li>
+                    <li>• Export-ready packaging and certification</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">🎨 Stage 4: Manufacturing</h3>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Textile Production (Phase 3+)</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Weaving facility for finished fabrics</li>
+                    <li>• Natural dyeing and printing capabilities</li>
+                    <li>• Premium silk fabric production</li>
+                    <li>• Partner with local designers</li>
+                  </ul>
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Product Development</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Silk scarves, shawls, garments</li>
+                    <li>• Home textiles (bedding, cushions)</li>
+                    <li>• Medical-grade silk (bio-compatible)</li>
+                    <li>• Custom orders for fashion houses</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Branding & Marketing</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• "Kenya Silk" premium brand launch</li>
+                    <li>• Sustainability & origin storytelling</li>
+                    <li>• Trade shows: Milan, Paris, NYC</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-400/20 border-2 border-green-400 rounded-xl p-6">
+            <h3 className="text-2xl font-bold text-green-400 mb-4">♻️ Circular Economy: Zero Waste Model</h3>
+            <div className="grid grid-cols-3 gap-6 text-base">
+              <div>
+                <strong>Silk Pupae →</strong> High-protein animal feed (poultry, fish)
+                <div className="text-sm opacity-80 mt-2">Revenue: KES 50/kg | Volume: 10kg per 40kg cocoons</div>
+              </div>
+              <div>
+                <strong>Silkworm Waste →</strong> Premium organic fertilizer
+                <div className="text-sm opacity-80 mt-2">Revenue: KES 20/kg | Sold back to farmers</div>
+              </div>
+              <div>
+                <strong>Cocoon By-products →</strong> Secondary textiles, craft materials
+                <div className="text-sm opacity-80 mt-2">Creates additional 10-15% revenue boost</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 8: Implementation Roadmap - Detailed
+    {
+      title: "5-Year Implementation Roadmap",
+      subtitle: "Detailed phased approach with milestones and KPIs",
+      content: (
+        <div className="space-y-5">
+          <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-l-4 border-blue-400">
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="text-2xl font-bold text-blue-400">Phase 1: Foundation (Year 1-2)</h3>
+              <span className="bg-blue-400/20 px-4 py-1 rounded-full text-sm font-bold">Months 1-24</span>
+            </div>
+            <div className="grid grid-cols-3 gap-4 text-sm mb-4">
+              <div>
+                <strong className="text-blue-400">Production Target:</strong>
+                <div>Year 1: 25 tonnes</div>
+                <div>Year 2: 100 tonnes</div>
+              </div>
+              <div>
+                <strong className="text-blue-400">Farmers:</strong>
+                <div>Year 1: 50 trained</div>
+                <div>Year 2: 200 trained</div>
+              </div>
+              <div>
+                <strong className="text-blue-400">Revenue:</strong>
+                <div>Year 1: KES 75M</div>
+                <div>Year 2: KES 300M</div>
+              </div>
+            </div>
+            <div className="space-y-2 text-base">
+              <div><strong>Q1-Q2:</strong> Site selection, land acquisition, KALRO partnership formalization</div>
+              <div><strong>Q3-Q4:</strong> Build 3 demonstration farms (Kiambu, Kakamega, Meru), recruit first 50 farmers</div>
+              <div><strong>Year 2 Q1-Q2:</strong> Establish mulberry nurseries (500 acres), build collection centers (3 counties)</div>
+              <div><strong>Year 2 Q3-Q4:</strong> Scale to 200 farmers, first commercial cocoon harvest, domestic sales begin</div>
+            </div>
+            <div className="mt-3 pt-3 border-t border-white/20">
+              <strong>Key Milestones:</strong> Proof of concept validated | First revenue generated | Farmer training system established
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-l-4 border-yellow-400">
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="text-2xl font-bold text-yellow-400">Phase 2: Processing Infrastructure (Year 2-3)</h3>
+              <span className="bg-yellow-400/20 px-4 py-1 rounded-full text-sm font-bold">Months 18-36</span>
+            </div>
+            <div className="grid grid-cols-3 gap-4 text-sm mb-4">
+              <div>
+                <strong className="text-yellow-400">Production Target:</strong>
+                <div>Year 3: 300 tonnes</div>
+              </div>
+              <div>
+                <strong className="text-yellow-400">Farmers:</strong>
+                <div>Year 3: 800 trained</div>
+              </div>
+              <div>
+                <strong className="text-yellow-400">Revenue:</strong>
+                <div>Year 3: KES 900M</div>
+              </div>
+            </div>
+            <div className="space-y-2 text-base">
+              <div><strong>Q1-Q2:</strong> Build central processing plant in Thika (reeling, spinning capacity)</div>
+              <div><strong>Q3:</strong> Install automated reeling machines (50kg/day), quality testing lab</div>
+              <div><strong>Q4:</strong> Expand to 5 counties, establish 8 collection centers, scale to 500 farmers</div>
+              <div><strong>Year 3:</strong> Reach 800 farmers, domestic textile contracts secured, export certification begins</div>
+            </div>
+            <div className="mt-3 pt-3 border-t border-white/20">
+              <strong>Key Milestones:</strong> Processing infrastructure operational | Break-even achieved | Quality certifications obtained
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-l-4 border-green-400">
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="text-2xl font-bold text-green-400">Phase 3: Export Market Entry (Year 3-4)</h3>
+              <span className="bg-green-400/20 px-4 py-1 rounded-full text-sm font-bold">Months 30-48</span>
+            </div>
+            <div className="grid grid-cols-3 gap-4 text-sm mb-4">
+              <div>
+                <strong className="text-green-400">Production Target:</strong>
+                <div>Year 4: 600 tonnes</div>
+              </div>
+              <div>
+                <strong className="text-green-400">Farmers:</strong>
+                <div>Year 4: 2,500 trained</div>
+              </div>
+              <div>
+                <strong className="text-green-400">Revenue:</strong>
+                <div>Year 4: KES 1,800M</div>
+              </div>
+            </div>
+            <div className="space-y-2 text-base">
+              <div><strong>Q1-Q2:</strong> EU export certification completed, first European shipments</div>
+              <div><strong>Q3:</strong> Launch finished silk fabric line, partner with 5 fashion designers</div>
+              <div><strong>Q4:</strong> Expand to Nyanza and Eastern regions (8 counties total)</div>
+              <div><strong>Year 4:</strong> Scale to 2,500 farmers, establish Kenya Silk brand, profitability achieved</div>
+            </div>
+            <div className="mt-3 pt-3 border-t border-white/20">
+              <strong>Key Milestones:</strong> Export operations launched | Premium brand established | Profitability achieved
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-l-4 border-purple-400">
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="text-2xl font-bold text-purple-400">Phase 4: Regional Leadership (Year 5+)</h3>
+              <span className="bg-purple-400/20 px-4 py-1 rounded-full text-sm font-bold">Months 48+</span>
+            </div>
+            <div className="grid grid-cols-3 gap-4 text-sm mb-4">
+              <div>
+                <strong className="text-purple-400">Production Target:</strong>
+                <div>Year 5: 1,000+ tonnes</div>
+              </div>
+              <div>
+                <strong className="text-purple-400">Farmers:</strong>
+                <div>Year 5: 5,000+ trained</div>
+              </div>
+              <div>
+                <strong className="text-purple-400">Revenue:</strong>
+                <div>Year 5: KES 3,000M+</div>
+              </div>
+            </div>
+            <div className="space-y-2 text-base">
+              <div><strong>Q1-Q2:</strong> Expand to Tanzania and Uganda markets, establish regional distribution</div>
+              <div><strong>Q3-Q4:</strong> Launch bio-silk R&D program, medical textile line, premium garment collection</div>
+              <div><strong>Ongoing:</strong> Scale to 10,000 acres cultivation, 5,000+ farmers, market dominance</div>
+            </div>
+            <div className="mt-3 pt-3 border-t border-white/20">
+              <strong>Key Milestones:</strong> Regional market leader | 5,000+ farmers empowered | Exit opportunities available
+            </div>
+          </div>
+
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-6 mt-6">
+            <h3 className="text-xl font-bold text-yellow-400 mb-3">Critical Success Factors</h3>
+            <div className="grid grid-cols-4 gap-4 text-sm">
+              <div>✓ KALRO partnership for technical support</div>
+              <div>✓ Phased capital deployment reduces risk</div>
+              <div>✓ Farmer-centric model ensures supply</div>
+              <div>✓ Export-ready from day one</div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 9: Financial Projections - Detailed
+    {
+      title: "Financial Projections (5-Year)",
+      subtitle: "Conservative revenue and profitability model with detailed assumptions",
+      content: (
+        <div>
+          <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-6">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b-2 border-white/30">
+                  <th className="text-left py-3">Metric</th>
+                  <th className="text-right py-3">Year 1</th>
+                  <th className="text-right py-3">Year 2</th>
+                  <th className="text-right py-3">Year 3</th>
+                  <th className="text-right py-3">Year 4</th>
+                  <th className="text-right py-3">Year 5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/10 bg-blue-400/10">
+                  <td className="py-3 font-bold">Production (tonnes)</td>
+                  <td className="text-right">25</td>
+                  <td className="text-right">100</td>
+                  <td className="text-right">300</td>
+                  <td className="text-right">600</td>
+                  <td className="text-right font-bold">1,000</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3">Farmers Trained</td>
+                  <td className="text-right">50</td>
+                  <td className="text-right">200</td>
+                  <td className="text-right">800</td>
+                  <td className="text-right">2,500</td>
+                  <td className="text-right">5,000</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3">Acreage</td>
+                  <td className="text-right">250</td>
+                  <td className="text-right">1,000</td>
+                  <td className="text-right">3,000</td>
+                  <td className="text-right">6,000</td>
+                  <td className="text-right">10,000</td>
+                </tr>
+                <tr className="border-b border-white/10 bg-yellow-400/10">
+                  <td className="py-3 font-bold">Revenue (KES M)</td>
+                  <td className="text-right font-bold">75</td>
+                  <td className="text-right font-bold">300</td>
+                  <td className="text-right font-bold">900</td>
+                  <td className="text-right font-bold">1,800</td>
+                  <td className="text-right font-bold text-yellow-400">3,000</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- Raw Silk Sales</td>
+                  <td className="text-right">60M</td>
+                  <td className="text-right">240M</td>
+                  <td className="text-right">630M</td>
+                  <td className="text-right">1,080M</td>
+                  <td className="text-right">1,800M</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- Finished Products</td>
+                  <td className="text-right">-</td>
+                  <td className="text-right">30M</td>
+                  <td className="text-right">180M</td>
+                  <td className="text-right">540M</td>
+                  <td className="text-right">900M</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- By-products</td>
+                  <td className="text-right">15M</td>
+                  <td className="text-right">30M</td>
+                  <td className="text-right">90M</td>
+                  <td className="text-right">180M</td>
+                  <td className="text-right">300M</td>
+                </tr>
+                <tr className="border-b border-white/10 bg-red-400/10">
+                  <td className="py-3 font-bold">COGS (KES M)</td>
+                  <td className="text-right">60</td>
+                  <td className="text-right">225</td>
+                  <td className="text-right">630</td>
+                  <td className="text-right">1,170</td>
+                  <td className="text-right">1,800</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- Farmer Payments</td>
+                  <td className="text-right">30M</td>
+                  <td className="text-right">120M</td>
+                  <td className="text-right">360M</td>
+                  <td className="text-right">720M</td>
+                  <td className="text-right">1,200M</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- Processing Costs</td>
+                  <td className="text-right">20M</td>
+                  <td className="text-right">75M</td>
+                  <td className="text-right">200M</td>
+                  <td className="text-right">350M</td>
+                  <td className="text-right">500M</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- Materials & Supplies</td>
+                  <td className="text-right">10M</td>
+                  <td className="text-right">30M</td>
+                  <td className="text-right">70M</td>
+                  <td className="text-right">100M</td>
+                  <td className="text-right">100M</td>
+                </tr>
+                <tr className="border-b border-white/10 bg-green-400/10">
+                  <td className="py-3 font-bold">Gross Profit (KES M)</td>
+                  <td className="text-right font-bold">15</td>
+                  <td className="text-right font-bold">75</td>
+                  <td className="text-right font-bold">270</td>
+                  <td className="text-right font-bold">630</td>
+                  <td className="text-right font-bold text-green-400">1,200</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3">Gross Margin %</td>
+                  <td className="text-right">20%</td>
+                  <td className="text-right">25%</td>
+                  <td className="text-right">30%</td>
+                  <td className="text-right">35%</td>
+                  <td className="text-right text-green-400">40%</td>
+                </tr>
+                <tr className="border-b border-white/10 bg-red-400/10">
+                  <td className="py-3 font-bold">Operating Expenses</td>
+                  <td className="text-right">40M</td>
+                  <td className="text-right">90M</td>
+                  <td className="text-right">180M</td>
+                  <td className="text-right">270M</td>
+                  <td className="text-right">360M</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- Salaries & Benefits</td>
+                  <td className="text-right">20M</td>
+                  <td className="text-right">45M</td>
+                  <td className="text-right">90M</td>
+                  <td className="text-right">135M</td>
+                  <td className="text-right">180M</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- Marketing & Sales</td>
+                  <td className="text-right">10M</td>
+                  <td className="text-right">25M</td>
+                  <td className="text-right">50M</td>
+                  <td className="text-right">75M</td>
+                  <td className="text-right">100M</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-3 pl-4">- Admin & Overhead</td>
+                  <td className="text-right">10M</td>
+                  <td className="text-right">20M</td>
+                  <td className="text-right">40M</td>
+                  <td className="text-right">60M</td>
+                  <td className="text-right">80M</td>
+                </tr>
+                <tr className="border-b-2 border-white/30 bg-yellow-400/20">
+                  <td className="py-3 font-bold text-lg">EBITDA (KES M)</td>
+                  <td className="text-right font-bold">-25M</td>
+                  <td className="text-right font-bold">-15M</td>
+                  <td className="text-right font-bold">90M</td>
+                  <td className="text-right font-bold">360M</td>
+                  <td className="text-right font-bold text-yellow-400 text-lg">840M</td>
+                </tr>
+                <tr>
+                  <td className="py-3">EBITDA Margin %</td>
+                  <td className="text-right">-33%</td>
+                  <td className="text-right">-5%</td>
+                  <td className="text-right">10%</td>
+                  <td className="text-right">20%</td>
+                  <td className="text-right text-yellow-400">28%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Key Assumptions</h3>
+              <ul className="space-y-2 text-sm">
+                <li>✓ Average selling price: KES 3,000/kg (conservative)</li>
+                <li>✓ Farmer payment: KES 1,200/kg (40% of revenue)</li>
+                <li>✓ Processing costs decline with scale economies</li>
+                <li>✓ Export mix reaches 40% by Year 5 (premium pricing)</li>
+                <li>✓ Finished products margin: 50% (vs. 40% raw silk)</li>
+                <li>✓ By-product revenue: 10% of total</li>
+                <li>✓ Staff costs: 50 employees Year 1 → 250 Year 5</li>
+              </ul>
+            </div>
+
+            <div className="bg-green-400/20 border-2 border-green-400 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-green-400 mb-4">Financial Milestones</h3>
+              <div className="space-y-3 text-base">
+                <div className="flex justify-between items-center pb-3 border-b border-green-400/30">
+                  <span><strong>Break-Even:</strong></span>
+                  <span className="font-bold">Year 3 (Month 30)</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-green-400/30">
+                  <span><strong>Positive Cash Flow:</strong></span>
+                  <span className="font-bold">Year 4 (Month 42)</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-green-400/30">
+                  <span><strong>Cumulative Profit:</strong></span>
+                  <span className="font-bold">Year 5+</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span><strong>Exit Multiple (Est.):</strong></span>
+                  <span className="font-bold">8-12x EBITDA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 10: Use of Funds - Detailed
+    {
+      title: "Use of Investment Funds",
+      subtitle: "Detailed allocation for Phase 1-2 capital deployment",
+      content: (
+        <div>
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-6 mb-6">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-3">Total Capital Required: Years 1-3</h3>
+            <div className="text-4xl font-bold text-center mb-2">KES 500 Million</div>
+            <p className="text-lg text-center">Phased deployment aligned with milestones and revenue generation</p>
+          </div>
+
+          <div className="grid grid-cols-4 gap-4 mb-8">
+            {[
+              { pct: "35%", amount: "KES 175M", label: "Infrastructure &\nFacilities" },
+              { pct: "25%", amount: "KES 125M", label: "Farmer Training &\nSupport" },
+              { pct: "20%", amount: "KES 100M", label: "Processing\nEquipment" },
+              { pct: "20%", amount: "KES 100M", label: "Working Capital\n& Operations" }
+            ].map((item, i) => (
+              <div key={i} className="bg-white/10 backdrop-blur p-6 rounded-xl text-center border-2 border-white/20">
+                <div className="text-4xl font-bold text-yellow-400 mb-2">{item.pct}</div>
+                <div className="text-xl font-bold mb-2">{item.amount}</div>
+                <div className="text-sm opacity-90 whitespace-pre-line">{item.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Infrastructure (35% - KES 175M)</h3>
+              <table className="w-full text-sm">
+                <tbody>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Demonstration Farms (3 locations)</td>
+                    <td className="text-right font-bold">KES 45M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Mulberry Nurseries (500→3,000 acres)</td>
+                    <td className="text-right font-bold">KES 50M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Collection Centers (8 counties)</td>
+                    <td className="text-right font-bold">KES 40M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Central Processing Plant (Thika)</td>
+                    <td className="text-right font-bold">KES 30M</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2">Land Acquisition & Development</td>
+                    <td className="text-right font-bold">KES 10M</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Training & Support (25% - KES 125M)</h3>
+              <table className="w-full text-sm">
+                <tbody>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Farmer Training Programs (800 farmers)</td>
+                    <td className="text-right font-bold">KES 40M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Extension Officers (30 staff)</td>
+                    <td className="text-right font-bold">KES 35M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">KALRO Partnership & Research</td>
+                    <td className="text-right font-bold">KES 25M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Training Materials & Manuals</td>
+                    <td className="text-right font-bold">KES 15M</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2">Farmer Support Systems (mobile, etc.)</td>
+                    <td className="text-right font-bold">KES 10M</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Equipment (20% - KES 100M)</h3>
+              <table className="w-full text-sm">
+                <tbody>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Cocoon Reeling Machines</td>
+                    <td className="text-right font-bold">KES 35M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Spinning & Twisting Equipment</td>
+                    <td className="text-right font-bold">KES 25M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Quality Control & Testing Lab</td>
+                    <td className="text-right font-bold">KES 15M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Climate Control Systems</td>
+                    <td className="text-right font-bold">KES 15M</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2">Packaging & Logistics Equipment</td>
+                    <td className="text-right font-bold">KES 10M</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Working Capital (20% - KES 100M)</h3>
+              <table className="w-full text-sm">
+                <tbody>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Farmer Advance Payments (12 months)</td>
+                    <td className="text-right font-bold">KES 40M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Cocoon & Raw Silk Inventory</td>
+                    <td className="text-right font-bold">KES 25M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Marketing & Business Development</td>
+                    <td className="text-right font-bold">KES 15M</td>
+                  </tr>
+                  <tr className="border-b border-white/10">
+                    <td className="py-2">Operating Expenses (12 months)</td>
+                    <td className="text-right font-bold">KES 15M</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2">Contingency Fund (5%)</td>
+                    <td className="text-right font-bold">KES 5M</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-blue-400/20 border-2 border-blue-400 rounded-xl p-6">
+            <h3 className="text-xl font-bold text-blue-400 mb-3">Capital Deployment Schedule</h3>
+            <div className="grid grid-cols-3 gap-4 text-base">
+              <div>
+                <strong>Year 1:</strong> KES 200M
+                <div className="text-sm opacity-80">Foundation, demo farms, initial training</div>
+              </div>
+              <div>
+                <strong>Year 2:</strong> KES 200M
+                <div className="text-sm opacity-80">Processing plant, scale farmers, equipment</div>
+              </div>
+              <div>
+                <strong>Year 3:</strong> KES 100M
+                <div className="text-sm opacity-80">Working capital, expansion, certifications</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 11: Geographic Expansion Strategy
+    {
+      title: "Geographic Expansion Strategy",
+      subtitle: "County-by-county rollout based on climate suitability and farmer density",
+      content: (
+        <div>
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-6 mb-6">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-3">Climate Requirements for Sericulture</h3>
+            <div className="grid grid-cols-4 gap-4 text-center text-base">
+              <div>
+                <strong>Temperature:</strong><br/>23-28°C optimal
+              </div>
+              <div>
+                <strong>Rainfall:</strong><br/>800-1,500mm annually
+              </div>
+              <div>
+                <strong>Altitude:</strong><br/>1,200-2,000m ASL
+              </div>
+              <div>
+                <strong>Humidity:</strong><br/>70-85% ideal
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-6 mb-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-blue-400">
+              <h3 className="text-xl font-bold text-blue-400 mb-4">Phase 1 Counties (Year 1-2)</h3>
+              <div className="space-y-3 text-sm">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Kiambu County</strong>
+                  <ul className="mt-2 space-y-1 ml-4">
+                    <li>• Proximity to Nairobi (export logistics)</li>
+                    <li>• KALRO headquarters in Thika</li>
+                    <li>• Educated farmer base</li>
+                    <li>• Target: 20 farmers, 5 tonnes Year 1</li>
+                  </ul>
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Kakamega County</strong>
+                  <ul className="mt-2 space-y-1 ml-4">
+                    <li>• Ideal climate (Western highlands)</li>
+                    <li>• High farmer density & cooperatives</li>
+                    <li>• 1,400-1,800m altitude perfect</li>
+                    <li>• Target: 20 farmers, 8 tonnes Year 1</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Meru County</strong>
+                  <ul className="mt-2 space-y-1 ml-4">
+                    <li>• Proven mulberry success (KALRO data)</li>
+                    <li>• Strong tea/coffee farming culture</li>
+                    <li>• Eastern highlands climate ideal</li>
+                    <li>• Target: 10 farmers, 5 tonnes Year 1</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-yellow-400">
+              <h3 className="text-xl font-bold text-yellow-400 mb-4">Phase 2 Counties (Year 2-3)</h3>
+              <div className="space-y-2 text-sm">
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Kisii:</strong> High rainfall, dense population, existing ag coops
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Nyamira:</strong> Perfect altitude (1,500-2,000m), tea farming region
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Bungoma:</strong> Western region expansion, maize/sugarcane transition
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Vihiga:</strong> Small landholdings (silk-compatible), high unemployment
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Embu:</strong> Eastern highlands, proximity to Meru success
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Tharaka-Nithi:</strong> Lower altitudes workable, expanding base
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Murang'a:</strong> Central Kenya, coffee farmers diversification
+                </div>
+                <div>
+                  <strong>Nyeri:</strong> Higher altitude zones, tea farming expertise
+                </div>
+                <p className="mt-3 text-xs opacity-80">Target: 600 farmers, 200 tonnes by end Year 3</p>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-green-400">
+              <h3 className="text-xl font-bold text-green-400 mb-4">Phase 3+ Counties (Year 4-5)</h3>
+              <div className="space-y-2 text-sm">
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Taita-Taveta:</strong> Coastal highlands, unique microclimate
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Machakos:</strong> Eastern semi-arid, drought-resistant option
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Makueni:</strong> Proven success (Tosheka Textiles model)
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Nakuru:</strong> Rift Valley, large-scale commercial potential
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Bomet:</strong> Southern Rift, tea region diversification
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Kericho:</strong> Tea farming stronghold, climate perfect
+                </div>
+                <div className="pb-2 border-b border-white/10">
+                  <strong>Trans Nzoia:</strong> Western highlands, large farms
+                </div>
+                <div>
+                  <strong>Nandi:</strong> High-altitude zones suitable
+                </div>
+                <p className="mt-3 text-xs opacity-80">Target: 4,000+ farmers, 800 tonnes by end Year 5</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+            <h3 className="text-xl font-bold text-yellow-400 mb-4">County Selection Criteria (Weighted Scoring)</h3>
+            <div className="grid grid-cols-3 gap-6 text-sm">
+              <div>
+                <strong className="text-yellow-400">Climate Factors (40%):</strong>
+                <ul className="mt-2 space-y-1 ml-4">
+                  <li>• Temperature range 23-28°C</li>
+                  <li>• Annual rainfall 800-1,500mm</li>
+                  <li>• Altitude 1,200-2,000m ASL</li>
+                  <li>• Growing season length</li>
+                </ul>
+              </div>
+              <div>
+                <strong className="text-yellow-400">Social Factors (30%):</strong>
+                <ul className="mt-2 space-y-1 ml-4">
+                  <li>• Farmer cooperative presence</li>
+                  <li>• Agricultural extension services</li>
+                  <li>• Women's group participation</li>
+                  <li>• Education/literacy levels</li>
+                </ul>
+              </div>
+              <div>
+                <strong className="text-yellow-400">Infrastructure (30%):</strong>
+                <ul className="mt-2 space-y-1 ml-4">
+                  <li>• Road access & condition</li>
+                  <li>• Proximity to collection centers</li>
+                  <li>• Mobile network coverage</li>
+                  <li>• County government support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 12: Partnerships & Team
+    {
+      title: "Strategic Partnerships & Team",
+      subtitle: "Leveraging Kenya's leading institutions and experienced leadership",
+      content: (
+        <div>
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="bg-white/10 backdrop-blur p-8 rounded-xl border-2 border-blue-400">
+              <h3 className="text-3xl font-bold text-blue-400 mb-4">🔬 KALRO Partnership</h3>
+              <p className="text-lg mb-4">
+                <strong>Kenya Agricultural & Livestock Research Organization</strong><br/>
+                National Sericulture Research Centre, Thika
+              </p>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Government Investment:</strong> KES 700M pledged to sericulture center (2020 announcement)
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Capabilities:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Silkworm egg production (disease-free strains)</li>
+                    <li>• Mulberry variety development (Kanva-2, etc.)</li>
+                    <li>• Disease management research & protocols</li>
+                    <li>• Farmer training curriculum development</li>
+                    <li>• Soil & leaf quality analysis</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Our Agreement:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Priority access to research & facilities</li>
+                    <li>• Joint farmer training programs</li>
+                    <li>• Technical advisory services</li>
+                    <li>• Co-development of best practices</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-8 rounded-xl border-2 border-purple-400">
+              <h3 className="text-3xl font-bold text-purple-400 mb-4">🎓 University of Nairobi</h3>
+              <p className="text-lg mb-4">
+                <strong>Sericulture Centre of Excellence</strong><br/>
+                Upper Kabete Campus (Est. 2021)
+              </p>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Partnership:</strong> Established with Silk International Ltd for commercial sericulture research
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Capabilities:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Advanced research on silk production</li>
+                    <li>• Soil & leaf analysis laboratory</li>
+                    <li>• Silkworm genetics & breeding programs</li>
+                    <li>• Student internships & labor pool</li>
+                    <li>• Innovation in silk applications</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Collaboration Focus:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• R&D for productivity improvements</li>
+                    <li>• Quality testing & certification</li>
+                    <li>• Training program co-development</li>
+                    <li>• Technology transfer initiatives</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur p-6 rounded-xl mb-6">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-4">Additional Strategic Relationships</h3>
+            <div className="grid grid-cols-3 gap-6 text-base">
+              <div>
+                <strong>County Governments (8 counties):</strong>
+                <ul className="text-sm mt-2 space-y-1">
+                  <li>• Land access & zoning support</li>
+                  <li>• Farmer mobilization & sensitization</li>
+                  <li>• Infrastructure co-investment</li>
+                  <li>• Extension officer collaboration</li>
+                </ul>
+              </div>
+              <div>
+                <strong>Ministry of Agriculture:</strong>
+                <ul className="text-sm mt-2 space-y-1">
+                  <li>• National textile policy alignment</li>
+                  <li>• "Buy Kenya Build Kenya" initiative</li>
+                  <li>• Agricultural subsidies & support</li>
+                  <li>• Export promotion assistance</li>
+                </ul>
+              </div>
+              <div>
+                <strong>Export Promotion Council:</strong>
+                <ul className="text-sm mt-2 space-y-1">
+                  <li>• Market access & trade missions</li>
+                  <li>• Export certifications (EU, US)</li>
+                  <li>• International buyer connections</li>
+                  <li>• Trade fair participation support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-yellow-400/20 to-yellow-400/10 border-l-4 border-yellow-400 p-6 rounded-lg">
+            <h3 className="text-2xl font-bold text-yellow-400 mb-4">Leadership Team (To Be Recruited)</h3>
+            <div className="grid grid-cols-2 gap-6 text-base">
+              <div>
+                <strong>CEO:</strong> Agribusiness executive with 15+ years scaling agricultural enterprises in East Africa
+              </div>
+              <div>
+                <strong>CTO / Head of Production:</strong> Sericulture expert with international training (India, China, Thailand)
+              </div>
+              <div>
+                <strong>Head of Farmer Relations:</strong> Agricultural extension specialist with cooperative management experience
+              </div>
+              <div>
+                <strong>CFO:</strong> Finance professional with agri-business and export operations background
+              </div>
+            </div>
+            <p className="mt-4 text-sm opacity-80"><em>Advisory Board: KALRO scientists, UoN researchers, textile industry veterans, export specialists</em></p>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 13: Risk Analysis & Mitigation
+    {
+      title: "Risk Analysis & Mitigation Strategies",
+      subtitle: "Comprehensive risk assessment with detailed mitigation plans",
+      content: (
+        <div>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-red-400/20 border-2 border-red-400 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-red-400 mb-4">Production Risks</h3>
+              <div className="space-y-4 text-sm">
+                <div className="pb-3 border-b border-red-400/30">
+                  <strong className="text-base">Silkworm Disease Outbreaks</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Disease can devastate entire batches, reducing yields by 30-50%
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> KALRO partnership for disease-free eggs; strict biosecurity protocols; quarantine systems; insurance for major losses; diversified farmer base
+                  </div>
+                </div>
+                <div className="pb-3 border-b border-red-400/30">
+                  <strong className="text-base">Climate Variability</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Extreme weather affects mulberry growth and silkworm health
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Climate-controlled rearing facilities; drought-resistant mulberry varieties; geographic diversification across counties; irrigation systems
+                  </div>
+                </div>
+                <div>
+                  <strong className="text-base">Farmer Adoption Rate</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Slow farmer uptake delays production scaling
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Demonstration farms showing profits; guaranteed purchase agreements; upfront training investment; farmer success stories; cooperative model
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-red-400/20 border-2 border-red-400 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-red-400 mb-4">Market Risks</h3>
+              <div className="space-y-4 text-sm">
+                <div className="pb-3 border-b border-red-400/30">
+                  <strong className="text-base">Price Volatility</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Global silk prices fluctuate 15-25% based on Asian production
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Premium positioning above commodity prices; long-term supply contracts; diversified customer base; vertical integration captures more value
+                  </div>
+                </div>
+                <div className="pb-3 border-b border-red-400/30">
+                  <strong className="text-base">Export Market Access</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Trade barriers, certification delays, tariff changes
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> EPA with EU (duty-free); pursuing AGOA benefits; early certification focus; Export Promotion Council partnership; domestic market backup
+                  </div>
+                </div>
+                <div>
+                  <strong className="text-base">Competition</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> New entrants or Asian imports undercut pricing
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> First-mover advantage & brand equity; sustainability premium; long-term buyer relationships; cost leadership through scale
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-red-400/20 border-2 border-red-400 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-red-400 mb-4">Operational Risks</h3>
+              <div className="space-y-4 text-sm">
+                <div className="pb-3 border-b border-red-400/30">
+                  <strong className="text-base">Quality Control</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Inconsistent quality damages export reputation
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Comprehensive grading system; farmer incentives for Grade A; quality testing lab; extension officer oversight; KALRO technical support
+                  </div>
+                </div>
+                <div className="pb-3 border-b border-red-400/30">
+                  <strong className="text-base">Supply Chain Disruption</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Transportation issues, equipment breakdowns, input shortages
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Multiple collection centers reduce distance; backup equipment inventory; local maintenance capacity; multiple supplier relationships
+                  </div>
+                </div>
+                <div>
+                  <strong className="text-base">Key Personnel Dependency</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Loss of technical expertise or leadership disrupts operations
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Strong institutional partnerships (KALRO, UoN); documented processes; cross-training programs; competitive compensation; succession planning
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-red-400/20 border-2 border-red-400 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-red-400 mb-4">Financial Risks</h3>
+              <div className="space-y-4 text-sm">
+                <div className="pb-3 border-b border-red-400/30">
+                  <strong className="text-base">Cash Flow Timing</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Negative cash flow Years 1-3 requires sufficient capital reserves
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Conservative financial modeling; phased capital deployment; early revenue from domestic sales; working capital reserves; credit facilities
+                  </div>
+                </div>
+                <div className="pb-3 border-b border-red-400/30">
+                  <strong className="text-base">Currency Exchange</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> KES volatility affects export revenue and import costs
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Natural hedge (domestic inputs vs. export sales); forward contracts for major transactions; USD-denominated contracts where possible
+                  </div>
+                </div>
+                <div>
+                  <strong className="text-base">Scaling Costs</strong>
+                  <div className="mt-2 opacity-90">
+                    <em>Risk:</em> Costs exceed projections during rapid expansion
+                  </div>
+                  <div className="mt-2 text-green-400">
+                    <strong>Mitigation:</strong> Phased rollout allows cost validation; 20% contingency in budget; economies of scale kick in Year 3+; milestone-based capital release
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-green-400/20 border-2 border-green-400 rounded-xl p-6">
+            <h3 className="text-2xl font-bold text-green-400 mb-4">Overall Risk Rating: MEDIUM</h3>
+            <p className="text-lg mb-4">
+              While sericulture has inherent agricultural and market risks, our comprehensive mitigation strategies, 
+              institutional partnerships, and phased approach significantly reduce overall risk exposure.
+            </p>
+            <div className="grid grid-cols-3 gap-4 text-base">
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2">✓</div>
+                <strong>Proven Model</strong>
+                <div className="text-sm opacity-80">45+ years KALRO research validates viability</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2">✓</div>
+                <strong>Strong Partners</strong>
+                <div className="text-sm opacity-80">Government institutions provide technical backstop</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2">✓</div>
+                <strong>Phased Deployment</strong>
+                <div className="text-sm opacity-80">Validate assumptions before major capital commitment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 14: Exit Strategy & Returns
+    {
+      title: "Exit Strategy & Investor Returns",
+      subtitle: "Multiple pathways to attractive returns within 5-7 years",
+      content: (
+        <div>
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-8 mb-8">
+            <h3 className="text-3xl font-bold text-yellow-400 mb-4 text-center">Target: 3-5x Return in 5-7 Years</h3>
+            <p className="text-xl text-center">Multiple exit options provide flexibility based on market conditions and investor preferences</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Primary Exit: Strategic Acquisition</h3>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Timeline:</strong> Year 5-7
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Potential Acquirers:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Asian silk conglomerates (Chinese, Indian)</li>
+                    <li>• International textile manufacturers</li>
+                    <li>• Agricultural multinationals (agri-inputs)</li>
+                    <li>• East African textile companies</li>
+                    <li>• Private equity (African agribusiness focus)</li>
+                  </ul>
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Valuation Multiple:</strong> 8-12x EBITDA
+                  <div className="text-sm mt-2">Industry standard for agribusiness with export operations and strong growth trajectory</div>
+                </div>
+                <div>
+                  <strong>Exit Value Scenario (Year 5):</strong>
+                  <div className="mt-2 bg-green-400/20 p-4 rounded">
+                    <div>EBITDA: KES 840M</div>
+                    <div>Multiple: 10x</div>
+                    <div className="text-2xl font-bold text-green-400 mt-2">Enterprise Value: KES 8.4B</div>
+                    <div className="text-sm opacity-80 mt-2">Implies 3-5x return on initial investment depending on equity stake</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Secondary Exit: IPO</h3>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Timeline:</strong> Year 6-8
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Listing Options:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Nairobi Securities Exchange (NSE)</li>
+                    <li>• Secondary listing: Uganda SE, Dar es Salaam SE</li>
+                    <li>• International market (AIM London for growth companies)</li>
+                  </ul>
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Requirements:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• 3 years profitability (achieved Year 4+)</li>
+                    <li>• KES 3B+ market cap (Year 5+ valuation)</li>
+                    <li>• Strong governance & reporting</li>
+                    <li>• Institutional investor interest</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Benefits:</strong>
+                  <div className="text-sm mt-2 space-y-1">
+                    <li>• Liquidity for early investors</li>
+                    <li>• Capital raising for expansion</li>
+                    <li>• Valuation premium for public companies</li>
+                    <li>• National champion status</li>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Partial Exit: Dividend Recapitalization</h3>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Timeline:</strong> Year 4+ (after profitability)
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Structure:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Debt financing secured against cash flows</li>
+                    <li>• Special dividend to return capital to investors</li>
+                    <li>• Maintain equity stake for future upside</li>
+                    <li>• Typical: 50-70% capital return, retain growth</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Advantages:</strong>
+                  <div className="text-sm mt-2 space-y-1">
+                    <li>• Early partial liquidity for investors</li>
+                    <li>• Retain upside potential</li>
+                    <li>• No change of control required</li>
+                    <li>• Tax-efficient structure</li>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl border-2 border-white/20">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Alternative: Secondary Sale</h3>
+              <div className="space-y-3 text-base">
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Timeline:</strong> Year 3+ (after validation)
+                </div>
+                <div className="pb-3 border-b border-white/20">
+                  <strong>Potential Buyers:</strong>
+                  <ul className="text-sm mt-2 space-y-1 ml-4">
+                    <li>• Development Finance Institutions (DFIs)</li>
+                    <li>• Impact investors seeking proven models</li>
+                    <li>• Private equity growth funds</li>
+                    <li>• Strategic industry players</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Benefits:</strong>
+                  <div className="text-sm mt-2 space-y-1">
+                    <li>• Earlier liquidity option</li>
+                    <li>• Bring in strategic partner with expertise</li>
+                    <li>• Validate business model valuation</li>
+                    <li>• Partial or full exit flexibility</li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-green-400/20 to-green-400/10 border-2 border-green-400 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-green-400 mb-4">Investor Return Scenarios</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-base">
+                <thead>
+                  <tr className="border-b-2 border-green-400/50">
+                    <th className="text-left py-3">Scenario</th>
+                    <th className="text-right py-3">Exit Year</th>
+                    <th className="text-right py-3">EBITDA</th>
+                    <th className="text-right py-3">Multiple</th>
+                    <th className="text-right py-3">Enterprise Value</th>
+                    <th className="text-right py-3">IRR</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-green-400/30">
+                    <td className="py-3">Conservative</td>
+                    <td className="text-right">Year 6</td>
+                    <td className="text-right">KES 700M</td>
+                    <td className="text-right">8x</td>
+                    <td className="text-right">KES 5.6B</td>
+                    <td className="text-right font-bold">25-30%</td>
+                  </tr>
+                  <tr className="border-b border-green-400/30">
+                    <td className="py-3">Base Case</td>
+                    <td className="text-right">Year 5</td>
+                    <td className="text-right">KES 840M</td>
+                    <td className="text-right">10x</td>
+                    <td className="text-right">KES 8.4B</td>
+                    <td className="text-right font-bold text-green-400">35-40%</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3">Optimistic</td>
+                    <td className="text-right">Year 5</td>
+                    <td className="text-right">KES 1B+</td>
+                    <td className="text-right">12x</td>
+                    <td className="text-right">KES 12B+</td>
+                    <td className="text-right font-bold">45-50%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-sm opacity-80"><em>Assumes initial investment of KES 500M for significant equity stake. Actual returns depend on final capital structure and exit timing.</em></p>
+          </div>
+        </div>
+      )
+    },
+
+    // Slide 15: Call to Action
+    {
+      title: "Investment Opportunity",
+      subtitle: "Join us in building Kenya's silk industry from the ground up",
+      content: (
+        <div className="flex flex-col justify-center h-full">
+          <div className="bg-yellow-400/20 border-2 border-yellow-400 rounded-xl p-12 mb-8">
+            <h3 className="text-4xl font-bold text-yellow-400 mb-6 text-center">Capital Required: KES 500 Million</h3>
+            <p className="text-2xl text-center leading-relaxed mb-8">
+              Seeking strategic investment partners for Phase 1-2 infrastructure, farmer training, and market entry operations
+            </p>
+            <div className="grid grid-cols-3 gap-6 text-xl">
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2">Year 3</div>
+                <div className="text-sm">Break-Even</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2">3-5x</div>
+                <div className="text-sm">Target Return</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2">5-7 Years</div>
+                <div className="text-sm">Exit Timeline</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">What You Get</h3>
+              <ul className="space-y-3 text-lg">
+                <li>✓ Equity stake in high-growth agribusiness</li>
+                <li>✓ First-mover advantage in emerging industry</li>
+                <li>✓ Measurable social impact (5,000+ jobs)</li>
+                <li>✓ Environmental sustainability credentials</li>
+                <li>✓ Strong institutional partnerships (KALRO, UoN)</li>
+                <li>✓ Multiple exit pathways</li>
+                <li>✓ Quarterly reporting and board representation</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Ideal Partner Profile</h3>
+              <ul className="space-y-3 text-lg">
+                <li>✓ Impact investors with agribusiness focus</li>
+                <li>✓ Development Finance Institutions (DFIs)</li>
+                <li>✓ Agricultural development funds</li>
+                <li>✓ Family offices seeking impact + returns</li>
+                <li>✓ Strategic textile industry players</li>
+                <li>✓ Grant organizations (blended finance)</li>
+                <li>✓ ESG-focused institutional investors</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-3xl font-bold mb-6">Next Steps</h3>
+            <div className="grid grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+                <div className="text-5xl mb-3">📅</div>
+                <strong className="text-xl">Schedule Meeting</strong>
+                <p className="text-sm opacity-80 mt-2">Discuss detailed business plan and financial model</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+                <div className="text-5xl mb-3">🔍</div>
+                <strong className="text-xl">Due Diligence</strong>
+                <p className="text-sm opacity-80 mt-2">Access data room, visit KALRO facilities, meet team</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+                <div className="text-5xl mb-3">🤝</div>
+                <strong className="text-xl">Partnership</strong>
+                <p className="text-sm opacity-80 mt-2">Structure investment and begin implementation</p>
+              </div>
+            </div>
+
+            <div className="flex gap-6 justify-center">
+              <button className="bg-yellow-400 text-blue-900 px-16 py-6 rounded-full text-2xl font-bold hover:bg-yellow-300 transition shadow-2xl">
+                Schedule Discussion
+              </button>
+              <button className="border-2 border-white px-16 py-6 rounded-full text-2xl font-bold hover:bg-white/10 transition">
+                Download Data Room
+              </button>
+            </div>
+
+            <div className="mt-12 bg-white/10 backdrop-blur rounded-xl p-6">
+              <p className="text-lg">
+                <strong>Contact:</strong> Silk Empire Kenya<br/>
+                📍 Nairobi, Kenya | 📧 Available upon request<br/>
+                <em className="text-sm opacity-80">Confidential Investment Memorandum - For Discussion Purposes Only</em>
+              </p>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-800 to-pink-700 text-white p-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-12 min-h-[600px] shadow-2xl border-2 border-white/20 relative">
+          <div className="absolute top-6 right-8 text-lg opacity-60 font-semibold">
+            {currentSlide + 1} / {slides.length}
+          </div>
+          
+          {slides[currentSlide].title && (
+            <>
+              <h1 className="text-5xl font-bold mb-4">{slides[currentSlide].title}</h1>
+              {slides[currentSlide].subtitle && (
+                <p className="text-2xl mb-8 opacity-90">{slides[currentSlide].subtitle}</p>
+              )}
+            </>
+          )}
+          
+          <div className="mt-8">
+            {slides[currentSlide].content}
+          </div>
+        </div>
+
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-lg rounded-full px-8 py-4 flex items-center gap-6 shadow-2xl border-2 border-white/20">
+          <button
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+            className="bg-white text-blue-900 p-3 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          
+          <span className="font-semibold text-lg px-4">
+            Slide {currentSlide + 1} of {slides.length}
+          </span>
+          
+          <button
+            onClick={nextSlide}
+            disabled={currentSlide === slides.length - 1}
+            className="bg-white text-blue-900 p-3 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DetailedPitchDeck;
+
